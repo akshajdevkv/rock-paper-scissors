@@ -61,7 +61,7 @@ button.addEventListener('click', () => {
  }
  function displayRoundWinner(result){
     const para = document.querySelector("#result");
-    console.log(result);
+  
     switch(result){
         case 'win':
             para.textContent = "You Win 🎉";
