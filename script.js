@@ -1,15 +1,7 @@
-function getComputerChoice(){
-    let  choice =  Math.floor(Math.random()*3);
-    if (!choice){
-        return "rock";
-    }else if (choice ==1){
-        return "paper";
-    }else{
-        return "scissors"
-    }
-}
+ 
 
 function playRound(playerSelection) {
+    console.log("input");
     const choices = ['rock', 'paper', 'scissors'];
     const computerSelection = choices[Math.floor(Math.random() * 3)];
     
