@@ -22,12 +22,26 @@ function playRound(playerSelection) {
       (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
       resultText = `You win! ${playerSelection} beats ${computerSelection}`;
-    } else {
+        updateScore('player');
+    } 
+    else {
+        updateScore('computer');
       resultText = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
   
     document.getElementById('result').textContent = resultText;
   }
+const buttons = document.querySelectorAll('button[data-choice]');
+buttons.forEach(button => {
+button.addEventListener('click', () => {
+    console.log("Hello");
+    const userChoice = button.dataset.choice;
+    //  playRound(userChoice);
+    console.log(userChoice);
+    });
+}); 
+ 
+ 
 
   let playerScore = 0;
   let computerScore = 0;
@@ -36,7 +50,7 @@ function playRound(playerSelection) {
     if (winner === 'player') playerScore++;
     if (winner === 'computer') computerScore++;
   
-    document.getElementById('score').textContent =
+    document.querySelector('#score').textContent =
       `Player: ${playerScore} | Computer: ${computerScore}`;
   }  
  
